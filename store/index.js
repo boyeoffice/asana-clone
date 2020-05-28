@@ -71,15 +71,7 @@ export const actions = {
     try {
       const res = await fetch(`${API_URL}/posts?include[]=43`)
       const data = await res.json()
-      const posts = await data.map(({ id, slug, title, date, tags, content, img_url }) => ({
-        id,
-        slug,
-        title,
-        date,
-        tags,
-        content,
-        img_url
-      }))
+      const posts = await data
       dispatch('getTwoPosts')
       commit('RECIEVE_SINGLE_POST', posts)
       commit('UPDATE_LOADING', false)
@@ -93,15 +85,7 @@ export const actions = {
       const p2 = fetch(`${API_URL}/posts?include[]=12`).then(x => x.json())
       const data = (await Promise.all([p1, p2])).flat()
       // const data = await res.json()
-      const posts = await data.map(({ id, slug, title, date, tags, content, img_url }) => ({
-        id,
-        slug,
-        title,
-        date,
-        tags,
-        content,
-        img_url
-      }))
+      const posts = await data
       commit('RECIEVE_TWO_POST', posts)
       dispatch('getNews')
     } catch (err) {
@@ -111,15 +95,7 @@ export const actions = {
   async getNews({ commit }) {
     try {
       const res = await fetch(`${API_URL}/posts?categories=3&per_page=6`).then(x => x.json())
-      const posts = res.map(({ id, slug, title, date, tags, content, img_url }) => ({
-        id,
-        slug,
-        title,
-        date,
-        tags,
-        content,
-        img_url
-      }))
+      const posts = res
       commit('RECIEVE_NEWS_POST', posts)
     } catch (err) {
 
@@ -132,16 +108,7 @@ export const actions = {
       const p3 = fetch(`${API_URL}/posts?include[]=14`).then(x => x.json())
       const data = (await Promise.all([p1, p2, p3])).flat()
       // const data = await res.json()
-      const posts = await data.map(({ id, slug, title, date, tags, content, img_url, thumbnail }) => ({
-        id,
-        slug,
-        title,
-        date,
-        tags,
-        content,
-        img_url,
-        thumbnail
-      }))
+      const posts = await data
       commit('RECIEVE_BREAKING_NEWS', posts)
     } catch (err) {
 

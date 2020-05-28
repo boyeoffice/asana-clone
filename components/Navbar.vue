@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-purple fixed-top">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-translate d-flex d-lg-block justify-content-between align-items-center">
         <nuxt-link to="/" class="navbar-brand">
           <img src="/img/core-img/logo.png" width="110" :alt="siteName" />

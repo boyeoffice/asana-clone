@@ -23,7 +23,7 @@
                     }
                   ]"
                 >
-                  <img :src="item.thumbnail" :alt="item.title.rendered">
+                  <v-lazy-image :srcset="item.thumbnail" :alt="item.title.rendered"></v-lazy-image>
                   <nuxt-link :to="`/${item.slug}`" class="align-self-center"><p>{{ item.title.rendered }}</p></nuxt-link>
                 </li>
               </ul>

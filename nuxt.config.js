@@ -56,6 +56,7 @@ export default {
    */
   plugins: [
     { src: '~/plugins/vue-lazyload', ssr: false },
+    { src: '~/plugins/lazy-image', ssr: false},
     "~/plugins/posts.server.js",
     //"~/plugins/tags.server.js",
     "~/plugins/dateformat.js"
