@@ -1,5 +1,5 @@
 /* eslint-disable */
-const API_URL = 'http://host-wordpress.test/wp-json/wp/v2'
+const API_URL = 'https://boye.verdics.com/wp-json/wp/v2' //'http://host-wordpress.test/wp-json/wp/v2'
 // const PROD_URL = 'https://boye.verdics.com/wp-json/wp/v2'
 export const state = () => ({
   posts: [],

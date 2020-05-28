@@ -1,17 +1,17 @@
 import axios from "axios"
 let dynamicRoutes = async () => {
   const routes = await axios
-    .get("http://host-wordpress.test/wp-json/wp/v2/posts")
+    .get("https://boye.verdics.com/wp-json/wp/v2/posts")
     .then(res => {
       return res.data.map(post => `${post.slug}`)
     })
     const p1 = await axios
-    .get("http://host-wordpress.test/wp-json/wp/v2/posts?page=1&per_page=20")
+    .get("https://boye.verdics.com/wp-json/wp/v2/posts?page=1&per_page=20")
     .then(res => {
       return res.data.map(post => `${post.slug}`)
     })
     const p2 = await axios
-    .get("http://host-wordpress.test/wp-json/wp/v2/pages")
+    .get("https://boye.verdics.com/wp-json/wp/v2/pages")
     .then(res => {
       return res.data.map(page => `/pages/${page.slug}`)
     })
