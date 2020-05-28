@@ -1,21 +1,23 @@
 <template>
-  <div :class="{ 'open-nav': showSidebar, 'sidebar-collapse': true }">
-    <div v-if="loading" class="preloader d-flex align-items-center justify-content-center">
-      <div class="lds-ellipsis">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+  <div class="OLAKUNLE BOYE">
+    <div :class="{ 'open-nav': showSidebar, 'sidebar-collapse': true }">
+      <div v-if="loading" class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
+      <navbar :showNav="showSidebar" @close="toggleSidebar" />
+      <div class="wrapper">
+        <breaking-news-area />
+        <nuxt />
+        <main-footer />
+      </div>
+      <button type="button" v-show="$route.path != '/search'" @click="search" class="btn btn-search"><i class="fa fa-search"></i></button>
+      <div v-if="showSidebar" id="bodyClick" @click="toggleSidebar"></div>
     </div>
-    <navbar :showNav="showSidebar" @close="toggleSidebar" />
-    <div class="wrapper">
-      <breaking-news-area />
-      <nuxt />
-      <main-footer />
-    </div>
-    <button type="button" v-show="$route.path != '/search'" @click="search" class="btn btn-search"><i class="fa fa-search"></i></button>
-    <div v-if="showSidebar" id="bodyClick" @click="toggleSidebar"></div>
   </div>
 </template>
 

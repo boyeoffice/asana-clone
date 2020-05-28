@@ -3,18 +3,18 @@
     <section class="page-area-detail">
       <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-12">
             <div class="page-thumbnail">
-              <img :src="page.img_url" alt="" />
+              <v-lazy-image :src="page.img_url" :alt="page.title.rendered"></v-lazy-image>
             </div>
           </div>
-          <div class="col-6"></div>
+          <div class="col-12"></div>
         </div>
       </div>
     </section>
     <section class="page-text mt-5">
       <div class="container">
-        <div class="col-6">
+        <div class="col-12">
           <p v-html="page.content.rendered"></p>
         </div>
       </div>
@@ -27,35 +27,37 @@
     name: 'PagesContent',
     head() {
       return {
-        title: this.pageTitle
+        title: this.page.title.rendered
       }
     },
-    data() {
-      return {
-        slug: this.$route.params.slug,
-        pageTitle: 'Page',
-        page: {
-          title: '',
-          content: ''
-        }
+    async asyncData({store, params}) {
+      let page = {}
+      if(store.state.pages.length) {
+        page = await store.state.pages.find((el) => el.slug === params.slug)
+        store.commit('UPDATE_LOADING', false)
+      } else {
+        const pages = await store.dispatch('getPages')
+        store.commit('UPDATE_LOADING', false)
+        page = pages.find((el) => el.slug === params.slug)
       }
+      return {page}
     },
     created() {
       //this.$store.dispatch('getPages')
-      this.callPages()
+      //this.callPages()
     },
     methods: {
-      callPages() {
-        if(this.$store.state.pages.length) {
-          const pages = this.$store.state.pages.find((el) => el.slug === this.slug)
-          this.$store.commit('UPDATE_LOADING', false)
-          return this.page = pages
-        }
-        this.$store.dispatch('getPages').then(pages => {
-          this.$store.commit('UPDATE_LOADING', false)
-          this.page = pages.find((el) => el.slug === this.slug)
-        })
-      }
+      //
     }
   }
 </script>
+
+<style scoped>
+.v-lazy-image {
+  filter: blur(10px);
+  transition: filter 0.7s;
+}
+.v-lazy-image-loaded {
+  filter: blur(0);
+}
+</style>
