@@ -69,7 +69,7 @@ export const actions = {
     if (state.singlePost.length) return
     commit('UPDATE_LOADING', true)
     try {
-      const res = await fetch(`${API_URL}/posts?include[]=43`)
+      const res = await fetch(`${API_URL}/posts?include[]=1`)
       const data = await res.json()
       const posts = await data
       dispatch('getTwoPosts')
@@ -81,8 +81,8 @@ export const actions = {
   },
   async getTwoPosts({ commit, dispatch }) {
     try {
-      const p1 = fetch(`${API_URL}/posts?include[]=14`).then(x => x.json())
-      const p2 = fetch(`${API_URL}/posts?include[]=12`).then(x => x.json())
+      const p1 = fetch(`${API_URL}/posts?include[]=10`).then(x => x.json())
+      const p2 = fetch(`${API_URL}/posts?include[]=13`).then(x => x.json())
       const data = (await Promise.all([p1, p2])).flat()
       // const data = await res.json()
       const posts = await data
@@ -94,7 +94,7 @@ export const actions = {
   },
   async getNews({ commit }) {
     try {
-      const res = await fetch(`${API_URL}/posts?categories=3&per_page=6`).then(x => x.json())
+      const res = await fetch(`${API_URL}/posts?categories=2&per_page=6`).then(x => x.json())
       const posts = res
       commit('RECIEVE_NEWS_POST', posts)
     } catch (err) {
