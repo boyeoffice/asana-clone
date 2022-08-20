@@ -1,6 +1,8 @@
 @import "normalize.css";
 @import "./base.css";
-
+.login_footer {
+  color: var(--color-tweak);
+}
 #app {
   max-width: 1280px;
   margin: 0 auto;
