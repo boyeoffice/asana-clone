@@ -71,6 +71,17 @@ const secondItems = ref([
     margin: 0 4px;
 }
 
+.f_login_item a {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.f_login_item a:hover {
+  color: var(--color-primary-text-hover);
+  fill: var(--color-primary-text-hover);
+  background-color: transparent;
+}
+
 .login_footer {
   color: var(--color-tweak);
 }
