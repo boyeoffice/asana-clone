@@ -24,11 +24,17 @@ ol, ul {
   list-style-type: none;
 }
 
-@media (hover: hover) {
+.primary_link {
+  cursor: pointer;
+  color: var(--color-primary-text);
+  fill: var(--color-primary-text);
+}
+
+/* @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
-}
+} */
 
 @media (min-width: 1024px) {
   body {

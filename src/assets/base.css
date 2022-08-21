@@ -21,6 +21,9 @@
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
   --color-tweak: #6d6e6f;
   --color-primary-text-hover: #4464bb;
+  --color-box-shadow-large: 0 5px 20px 0 rgba(109, 110, 111, 0.08);
+  --color-card-background: #fff;
+  --color-primary-text: #4573d2;
 }
 
 /* semantic color variables for this project */
