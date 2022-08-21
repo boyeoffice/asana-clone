@@ -24,6 +24,9 @@
   --color-box-shadow-large: 0 5px 20px 0 rgba(109, 110, 111, 0.08);
   --color-card-background: #fff;
   --color-primary-text: #4573d2;
+  --color-text: #1e1f21;
+  --color-button-border-secondary: #cfcbcb;
+  --color-icon: #6d6e6f;
 }
 
 /* semantic color variables for this project */
