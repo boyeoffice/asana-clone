@@ -13,9 +13,12 @@
       </div>
       <span class="flex items-center text-center">
         <span class="SeparatorRow-horizontalLine"></span>
-        <span style="margin: 0 8px;">or</span>
+        <span style="margin: 0 8px;" class="text-base">or</span>
         <span class="SeparatorRow-horizontalLine"></span>
       </span>
+      <form>
+        <input type="email">
+      </form>
     </div>
   </div>
 </template>
