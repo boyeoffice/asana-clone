@@ -27,6 +27,9 @@
   --color-text: #1e1f21;
   --color-button-border-secondary: #cfcbcb;
   --color-icon: #6d6e6f;
+  --color-button-background-secondary-hover: #f9f8f8;
+  --color-button-border-secondary-hover: #afabac;
+  --color-button-icon-secondary-hover: #1e1f21;
 }
 
 /* semantic color variables for this project */

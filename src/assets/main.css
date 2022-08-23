@@ -1,4 +1,3 @@
-@import "normalize.css";
 @import "./base.css";
 @tailwind base;
 @tailwind components;
@@ -25,6 +24,10 @@ a.tweak {
 
 ol, ul {
   list-style-type: none;
+}
+
+.color-text {
+  color: var(--color-text);
 }
 
 .primary_link {
