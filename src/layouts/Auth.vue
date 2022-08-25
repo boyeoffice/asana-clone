@@ -21,7 +21,7 @@ const secondItems = ref([
 </script>
 
 <template>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center auth_card">
     <RouterView />
     <div
       class="flex items-center"
@@ -43,6 +43,11 @@ const secondItems = ref([
 </template>
 
 <style lang="css">
+  .auth_card {
+    height: 100vh;
+    background: var(--color-background-medium);
+  }
+
   .f_login_item+.f_login_item::before {
     content: "•";
     margin: 0 4px;

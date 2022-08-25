@@ -16,8 +16,14 @@
         <span style="margin: 0 8px;" class="text-base">or</span>
         <span class="SeparatorRow-horizontalLine"></span>
       </span>
-      <form>
-        <input type="email">
+      <form class="flex flex-col mt-8">
+        <label for="Email" class="color-tweak" style="font-size: 12px; line-height: 18px;">Email address</label>
+        <div class="pt-3">
+          <input type="email" class="form-input px-3 py-1 rounded-md w-full" placeholder="name@company.com">
+        </div>
+        <div class="pt-4">
+          <button type="submit" class="NuxButton ThemeableRectangularButton w-full py-2 rounded-lg">Continue</button>
+        </div>
       </form>
     </div>
   </div>
@@ -81,5 +87,12 @@
     margin-top: 8px;
     min-width: 1px;
     padding-top: 8px;
+}
+
+.NuxButton.ThemeableRectangularButton {
+    background: var(--color-beta-background);
+    border-color: var(--color-beta-background);
+    color: var(--color-white);
+    fill: var(--color-white);
 }
 </style>
