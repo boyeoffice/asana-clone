@@ -33,6 +33,8 @@
   --color-beta-background: #726ab9;
   --color-white: #fff;
   --color-background-medium: #f9f8f8;
+  --color-button-background-subtle: transparent;
+  --color-text-weak: #6d6e6f;
 }
 
 /* semantic color variables for this project */

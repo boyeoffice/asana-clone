@@ -1,7 +1,17 @@
+<script setup lang="ts">
+  import { ref } from 'vue'
+  const isFirst = ref(false)
+</script>
+
 <template>
   <div class="login_card_layout">
     <div class="w-full">
       <div class="flex flex-col">
+        <div v-show="!isFirst" class="back_button" style="position: absolute; height: 32px;">
+          <div class="ThemeableIconButton ThemeableIconButton--medium ThemeableIconButton">
+            <svg class="Icon BackArrowLongIcon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M30,14.5H5.6l7.4-7.4c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0l-10,10c-0.6,0.6-0.6,1.5,0,2.1l10,10c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4c0.6-0.6,0.6-1.5,0-2.1l-7.4-7.4H30c0.8,0,1.5-0.7,1.5-1.5S30.8,14.5,30,14.5z"></path></svg>
+          </div>
+        </div>
         <a href="#" class="flex items-center self-center flex-col primary_link" style="margin-bottom: 48px;">
           <img src="@/assets/logo.png" style="height: 24px;" />
         </a>
@@ -22,7 +32,8 @@
           <input type="email" class="form-input px-3 py-1 rounded-md w-full" placeholder="name@company.com">
         </div>
         <div class="pt-4">
-          <button type="submit" class="NuxButton ThemeableRectangularButton w-full py-2 rounded-lg">Continue</button>
+          <button v-show="isFirst" @click="isFirst=!isFirst" type="button" class="NuxButton ThemeableRectangularButton w-full py-2 rounded-lg">Continue</button>
+          <button v-show="!isFirst" type="button" class="NuxButton ThemeableRectangularButton w-full py-2 rounded-lg">Login</button>
         </div>
         <div class="pt-5 text-center">
           <span class="color-tweak">Don't have an account?</span>
@@ -105,5 +116,37 @@
     border-color: var(--color-beta-background);
     color: var(--color-white);
     fill: var(--color-white);
+}
+
+.back_button {
+
+}
+
+.Icon {
+    flex: 0 0 auto;
+    height: 16px;
+    width: 16px;
+}
+
+.ThemeableIconButton.ThemeableIconButton--medium.ThemeableIconButton {
+    height: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    width: 28px;
+}
+
+.ThemeableIconButton {
+    align-items: center;
+    border: 1px solid;
+    border-radius: 6px;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    transition-duration: .2s;
+    transition-property: background,border,fill;
+    cursor: pointer;
+    background: var(--color-button-background-subtle);
+    border-color: var(--color-button-background-subtle);
+    fill: var(--color-text-weak);
 }
 </style>
