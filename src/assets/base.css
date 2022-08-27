@@ -24,7 +24,7 @@
   --color-box-shadow-large: 0 5px 20px 0 rgba(109, 110, 111, 0.08);
   --color-card-background: #fff;
   --color-primary-text: #4573d2;
-  --color-text: #1e1f21;
+  --color-text-2: #1e1f21;
   --color-button-border-secondary: #cfcbcb;
   --color-icon: #6d6e6f;
   --color-button-background-secondary-hover: #f9f8f8;
@@ -50,7 +50,7 @@
   --section-gap: 160px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
@@ -62,7 +62,7 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
   }
-}
+} */
 
 *,
 *::before,
