@@ -18,7 +18,7 @@
       </span>
       <form class="flex flex-col mt-8">
         <label for="Email" class="color-tweak" style="font-size: 12px; line-height: 18px;">Email address</label>
-        <div class="pt-3">
+        <div class="pt-2">
           <input type="email" class="form-input px-3 py-1 rounded-md w-full" placeholder="name@company.com">
         </div>
         <div class="pt-4">
@@ -26,7 +26,14 @@
         </div>
         <div class="pt-5 text-center">
           <span class="color-tweak">Don't have an account?</span>
-          <a href="#" class="pl-2">Sign up</a>
+          <a href="#" class="pl-2 primary_link">Sign up</a>
+        </div>
+        <div class="pt-5 text-center color-tweak small_text">
+          <span>This site is protected by reCAPTCHA and the Google</span>
+          <a class="color-tweak underline" href="#">&nbsp;Privacy Policy&nbsp;</a>
+          <span>and &nbsp;</span>
+          <a href="#" class="color-tweak underline">Terms of Service&nbsp;</a>
+          <span>apply.</span>
         </div>
       </form>
     </div>
