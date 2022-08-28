@@ -2,19 +2,19 @@
   import { ref } from 'vue'
 
   interface Form {
-    email: string,
+    email?: string,
     password?: string
   }
-  const isFirst = ref(false)
+  const isFirst = ref<Boolean>(true)
 
-  const form = ref<Form>({ email: 'user@example.com' })
+  const form = ref<Form>({})
 </script>
 
 <template>
   <div class="login_card_layout">
     <div class="w-full">
       <div class="flex flex-col">
-        <div v-show="!isFirst" class="back_button" style="position: absolute; height: 32px;">
+        <div v-show="!isFirst" @click="isFirst = !isFirst" class="back_button" style="position: absolute; height: 32px;">
           <div class="ThemeableIconButton ThemeableIconButton--medium ThemeableIconButton">
             <svg class="Icon BackArrowLongIcon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M30,14.5H5.6l7.4-7.4c0.6-0.6,0.6-1.5,0-2.1c-0.6-0.6-1.5-0.6-2.1,0l-10,10c-0.6,0.6-0.6,1.5,0,2.1l10,10c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4c0.6-0.6,0.6-1.5,0-2.1l-7.4-7.4H30c0.8,0,1.5-0.7,1.5-1.5S30.8,14.5,30,14.5z"></path></svg>
           </div>
@@ -34,12 +34,12 @@
         <span class="SeparatorRow-horizontalLine"></span>
       </span>
       <form class="flex flex-col mt-8">
-        <div class="_default flex mb-10 py-3 px-6 justify-start items-center w-full color-text rounded-md">
+        <div  v-show="!isFirst" class="_default flex mb-10 py-3 px-6 justify-start items-center w-full color-text rounded-md">
           <div class="flex w-full items-center justify-center">
             <img class="pr-2" src="@/assets/grey_man_2_avatar.png" width="28" height="28">
             <span class="text-base font-normal">{{ form.email }}</span>
           </div>
-          <div>
+          <div @click="isFirst = !isFirst" class="RemoveButton--isEnabled RemoveButton LoginOptionsLayout-removeButton RemoveButton--xsmall">
             <svg class="CompoundIcon--xsmall CompoundIcon XCircleCompoundIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23,12c0,6.1-4.9,11-11,11S1,18.1,1,12S5.9,1,12,1S23,5.9,23,12z" class="CompoundIcon-outer"></path><path d="M13.4,12l4.3-4.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0L12,10.6L7.7,6.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l4.3,4.3l-4.3,4.3c-0.4,0.4-0.4,1,0,1.4C6.5,17.9,6.7,18,7,18s0.5-0.1,0.7-0.3l4.3-4.3l4.3,4.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12z" class="CompoundIcon-inner"></path></svg>
           </div>
         </div>
@@ -179,5 +179,44 @@
     background: var(--color-button-background-subtle);
     border-color: var(--color-button-background-subtle);
     fill: var(--color-text-weak);
+}
+
+.RemoveButton.RemoveButton--xsmall.RemoveButton {
+  height: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.RemoveButton {
+  align-items: center;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.RemoveButton .CompoundIcon-inner {
+    fill: var(--color-white);
+    transition: 200ms fill,200ms stroke;
+}
+
+.RemoveButton .CompoundIcon-outer {
+    fill: var(--color-icon);
+    stroke: var(--color-icon);
+    transition: 200ms fill,200ms stroke;
+}
+
+.CompoundIcon.CompoundIcon--xsmall {
+    height: 12px;
+    min-height: 12px;
+    min-width: 12px;
+    width: 12px;
+}
+
+.CompoundIcon {
+    display: block;
+    stroke-width: 2px;
 }
 </style>
