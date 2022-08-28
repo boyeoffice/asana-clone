@@ -62,15 +62,18 @@
             class="form-input px-3 py-1 rounded-md w-full"
             v-model="form.password">
         </div>
+        <div class="pt-3">
+          <a class="color-tweak underline text-xs" href="#">Forgot password?</a>
+        </div>
         <div class="pt-4">
           <button v-show="isFirst" @click="isFirst=!isFirst" type="button" class="NuxButton ThemeableRectangularButton w-full py-2 rounded-lg">Continue</button>
           <button v-show="!isFirst" type="button" class="NuxButton ThemeableRectangularButton w-full py-2 rounded-lg">Login</button>
         </div>
-        <div class="pt-5 text-center">
+        <div v-show="isFirst" class="pt-5 text-center">
           <span class="color-tweak">Don't have an account?</span>
           <a href="#" class="pl-2 primary_link">Sign up</a>
         </div>
-        <div class="pt-5 text-center color-tweak small_text">
+        <div v-show="isFirst" class="pt-5 text-center color-tweak small_text">
           <span>This site is protected by reCAPTCHA and the Google</span>
           <a class="color-tweak underline" href="#">&nbsp;Privacy Policy&nbsp;</a>
           <span>and &nbsp;</span>
