@@ -21,6 +21,20 @@
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
   --color-tweak: #6d6e6f;
   --color-primary-text-hover: #4464bb;
+  --color-box-shadow-large: 0 5px 20px 0 rgba(109, 110, 111, 0.08);
+  --color-card-background: #fff;
+  --color-primary-text: #4573d2;
+  --color-text-2: #1e1f21;
+  --color-button-border-secondary: #cfcbcb;
+  --color-icon: #6d6e6f;
+  --color-button-background-secondary-hover: #f9f8f8;
+  --color-button-border-secondary-hover: #afabac;
+  --color-button-icon-secondary-hover: #1e1f21;
+  --color-beta-background: #726ab9;
+  --color-white: #fff;
+  --color-background-medium: #f9f8f8;
+  --color-button-background-subtle: transparent;
+  --color-text-weak: #6d6e6f;
 }
 
 /* semantic color variables for this project */
@@ -38,7 +52,7 @@
   --section-gap: 160px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
@@ -50,7 +64,7 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
   }
-}
+} */
 
 *,
 *::before,
@@ -59,6 +73,10 @@
   margin: 0;
   position: relative;
   font-weight: normal;
+}
+
+svg:not(:root) {
+    overflow: hidden;
 }
 
 body {
