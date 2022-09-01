@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/boyeoffice/asana-clone/workflows/CI/badge.svg)](https://github.com/boyeoffice/asana-clone/actions)
+
 # vue-project
 
 This template should help get you started developing with Vue 3 in Vite.
