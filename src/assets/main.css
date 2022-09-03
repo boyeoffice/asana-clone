@@ -46,6 +46,10 @@ ol, ul {
   background: var(--color-background-medium);
 }
 
+.bg-dark-tweak {
+  background: var(--vt-c-dark-tweak);
+}
+
 /* @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
