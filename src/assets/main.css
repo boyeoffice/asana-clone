@@ -49,6 +49,11 @@ ol, ul {
 .bg-dark-tweak {
   background: var(--vt-c-dark-tweak);
 }
+.Icon {
+  flex: 0 0 auto;
+  height: 16px;
+  width: 16px;
+}
 
 /* @media (hover: hover) {
   a:hover {
