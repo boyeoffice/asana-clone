@@ -37,6 +37,8 @@
   --color-button-background-subtle: transparent;
   --color-text-weak: #6d6e6f;
   --color-inverse-text: #f5f4f3;
+  --color-button-creation-background: #f06a6a;
+  --color-button-upsell-background: #f1bd6c;
 }
 
 /* semantic color variables for this project */

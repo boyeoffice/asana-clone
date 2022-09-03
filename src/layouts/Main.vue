@@ -10,7 +10,7 @@
     <div class="flex">
       <Sidebar />
     </div>
-    <div class="flex flex-col">
+    <div class="flex flex-col w-full">
       <HomeHeader />
       <RouterView />
     </div>
