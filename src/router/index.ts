@@ -5,6 +5,8 @@ import Main from '../layouts/Main.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  linkExactActiveClass: 'active',
+  linkActiveClass: 'active',
   routes: [
     {
       path: '/',

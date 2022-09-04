@@ -27,6 +27,10 @@ ol, ul {
   color: var(--color-text-2);
 }
 
+.inverse_color {
+  color: var(--color-inverse-text);
+}
+
 .color-tweak {
   color: var(--color-tweak);
 }
@@ -46,6 +50,10 @@ ol, ul {
   background: var(--color-background-medium);
 }
 
+._strong_dark_border {
+  border-color: var(--color-border-strong) !important;
+}
+
 .bg-dark-tweak {
   background: var(--vt-c-dark-tweak);
 }
@@ -53,6 +61,17 @@ ol, ul {
   flex: 0 0 auto;
   height: 16px;
   width: 16px;
+}
+
+.NavIcon {
+    height: 20px;
+    width: 20px;
+}
+
+.SidebarTopNavLinks-typeIcon {
+    fill: var(--color-inverse-icon);
+    margin-right: 8px;
+    transition: transform 250ms ease-out;
 }
 
 /* @media (hover: hover) {
