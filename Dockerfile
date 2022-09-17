@@ -1,19 +1,26 @@
 FROM node:16-alpine
 
-# Create and define the node_modules's cache directory.
-RUN mkdir -p /usr/src/cache
-WORKDIR /usr/src/cache
+# Create app directory
+WORKDIR /usr/src/app
 
-# Install the application's dependencies into the node_modules's cache directory.
+# Install the application's dependencies
 COPY package.json ./
-COPY yarn.lock ./
-RUN yarn install
+COPY package-lock.json ./
+RUN npm i
 
+# Copy in the source code
+COPY . .
 
-# Create and define the application's working directory.
-RUN mkdir -p /usr/app
-WORKDIR /usr/app
+#RUN mkdir -p node_modules/.vite && chmod -R 777 node_modules/.vite
+#RUN chown -R node /usr/src/app/node_modules
 
+# Don't use root user
 USER node
 
-COPY --chown=node:node . /usr/app
+# Expose port
+EXPOSE 5173
+
+# Build app
+
+CMD ["npm","run","build"]
+
