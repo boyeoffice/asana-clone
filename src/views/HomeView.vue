@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="home">
+  <div class="home primary-text">
     this is home
   </div>
 </template>
