@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="home primary-text">
+  <div class="home text-black-base">
     this is home
   </div>
 </template>
